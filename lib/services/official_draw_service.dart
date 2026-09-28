@@ -41,7 +41,7 @@ class OfficialDrawService {
       if (response.statusCode != 200) break;
       final parsed = _parse(game, url, response.body);
       if (parsed != null) out.add(parsed);
-      url = _previousUrl(game, response.body, url);
+      url = _previousUrl(game, response.body, url) ?? url;
     }
     return out;
   }
